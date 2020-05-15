@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:id="visualizationSubAnchorPane" maxHeight="-1.0" maxWidth="-1.0"
+            prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/11.0.1"
+            fx:controller="catbutler.gui.mainControllers.VisualizationController">
+    <children>
+        <StackPane fx:id="canvasStackPane" prefHeight="609.0" prefWidth="1444.0" AnchorPane.bottomAnchor="0.0"
+                   AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <StackPane alignment="BOTTOM_LEFT" prefHeight="609.0" prefWidth="1444.0"
+                           style="-fx-background-color: darkgray;">
+                    <children>
+                        <BorderPane>
+                            <center>
+                                <StackPane fx:id="mainCanvas" alignment="TOP_LEFT"
+                                           style="-fx-background-color: darkgray;">
+                                    <padding>
+                                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                    </padding>
+                                    <children>
+                                        <Group fx:id="mainGroup"/>
+
+                                    </children>
+                                </StackPane>
+                            </center>
+                            <left>
+                                <VBox fx:id="toolBoxVBox" prefHeight="609.0" prefWidth="129.0"
+                                      BorderPane.alignment="CENTER">
+                                    <children>
+                                        <TitledPane fx:id="toolboxTitledPane" collapsible="true" prefHeight="392.0"
+                                                    prefWidth="127.0" text="Tool Box">
+                                            <content>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="361.0" prefWidth="127.0"
+                                                      spacing="5.0">
+                                                    <children>
+                                                        <Label text="Network Type"/>
+                                                        <ChoiceBox fx:id="graphTypeCBox" prefWidth="150.0"/>
+                                                        <Separator prefWidth="200.0"/>
+                                                        <Label text="Layout Algorithm"/>
+                                                        <ChoiceBox fx:id="layoutCBox" prefWidth="150.0"/>
+                                                        <Label text="Iterations"/>
+                                                        <TextField fx:id="iterationsTextField" prefHeight="25.0"
+                                                                   prefWidth="82.0" promptText="1000" text="1000"/>
+                                                        <CheckBox fx:id="edgeTooltipsCheckBox" mnemonicParsing="false"
+                                                                  text="Edge Tooltips"/>
+                                                        <CheckBox fx:id="animateCheckBox" mnemonicParsing="false"
+                                                                  text="Animate"/>
+                                                        <Separator prefWidth="200.0"/>
+                                                        <Button fx:id="clearAndApplyLayoutButton"
+                                                                mnemonicParsing="false" text="Clear+Run"/>
+                                                        <Button fx:id="applyLayoutButton" mnemonicParsing="false"
+                                                                text="Run"/>
+                                                        <Separator prefWidth="200.0"/>
+                                                        <Label text="Export to..."/>
+                                                        <Button fx:id="exportNetwork" mnemonicParsing="false"
+                                                                prefHeight="25.0" prefWidth="164.0" text="PNG"/>
+                                                        <Button fx:id="exportNetwork1" layoutX="20.0" layoutY="303.0"
+                                                                mnemonicParsing="false" prefHeight="25.0"
+                                                                prefWidth="164.0" text="DOT"/>
+                                                        <Separator prefWidth="200.0"/>
+                                                        <Label text="# Nodes:"/>
+                                                        <Label fx:id="nodeCountLabel" text="-"/>
+                                                        <Label text="# Edges:"/>
+                                                        <Label fx:id="edgeCountLabel" text="-"/>
+                                                        <Label text="Process time (s)"/>
+                                                        <Label fx:id="timeLabel" text="-"/>
+                                                    </children>
+
+                                                </VBox>
+                                            </content>
+                                        </TitledPane>
+                                    </children>
+                                </VBox>
+                            </left>
+
+
+                        </BorderPane>
+                    </children>
+                </StackPane>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

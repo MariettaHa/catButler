@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<?import org.fxmisc.flowless.VirtualizedScrollPane?>
+<?import org.fxmisc.richtext.CodeArea?>
+<VBox xmlns:fx="http://javafx.com/fxml/1" prefHeight="948.0" prefWidth="1456.0" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="catbutler.gui.mainControllers.EditorViewController">
+    <children>
+        <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openFile" text="Open..."/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" text="Save Current Model..." onAction="#saveFile"/>
+                        <SeparatorMenuItem mnemonicParsing="false"/>
+                        <MenuItem mnemonicParsing="false" text="Quit" onAction="#quitGui"/>
+                    </items>
+                </Menu>
+                <!--<Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Undo" />
+                    <MenuItem mnemonicParsing="false" text="Redo" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Cut" />
+                    <MenuItem mnemonicParsing="false" text="Copy" />
+                    <MenuItem mnemonicParsing="false" text="Paste" />
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <SeparatorMenuItem mnemonicParsing="false" />
+                    <MenuItem mnemonicParsing="false" text="Select All" />
+                    <MenuItem mnemonicParsing="false" text="Unselect All" />
+                  </items>
+              </Menu>
+                <Menu mnemonicParsing="false" text="Scheme Editor">
+                    <items>
+                        <Menu mnemonicParsing="false" text="Scheme">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Open..." />
+                              <MenuItem mnemonicParsing="false" text="Save..." />
+                              <MenuItem mnemonicParsing="false" text="Validate" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Test Document">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Open..." />
+                              <MenuItem mnemonicParsing="false" text="Validate" />
+                           </items>
+                        </Menu>
+                     </items></Menu>
+                <Menu mnemonicParsing="false" text="Converter">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Scheme">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Open..." />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Input File">
+                          <items>
+                              <Menu mnemonicParsing="false" text="Format">
+                                 <items>
+                                    <RadioMenuItem mnemonicParsing="false" selected="true" text="CRS">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="inputToggle" />
+                                       </toggleGroup></RadioMenuItem>
+                                    <RadioMenuItem mnemonicParsing="false" text="WIM" toggleGroup="$inputToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="SBML" toggleGroup="$inputToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="DB" toggleGroup="$inputToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="Custom" toggleGroup="$inputToggle" />
+                                 </items>
+                              </Menu>
+                              <CheckMenuItem mnemonicParsing="false" text="Correct Invalid Strings/IDs" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Output File">
+                          <items>
+                              <Menu mnemonicParsing="false" text="Output Format">
+                                 <items>
+                                    <RadioMenuItem mnemonicParsing="false" text="CRS">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="outputToggle" />
+                                       </toggleGroup></RadioMenuItem>
+                                    <RadioMenuItem mnemonicParsing="false" selected="true" text="WIM" toggleGroup="$outputToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="SBML" toggleGroup="$outputToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="DB" toggleGroup="$outputToggle" />
+                                 </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text="Save as..." />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                      <MenuItem mnemonicParsing="false" text="Run" />
+                     </items></Menu>
+                <Menu mnemonicParsing="false" text="Visualization">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Layout">
+                          <items>
+                              <Menu mnemonicParsing="false" text="Visualization Type">
+                                <items>
+                                    <RadioMenuItem mnemonicParsing="false" selected="true" text="Reactions">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="visTypeToggle" />
+                                       </toggleGroup></RadioMenuItem>
+                                    <RadioMenuItem mnemonicParsing="false" text="Species and Reactions" toggleGroup="$visTypeToggle" />
+                                </items>
+                              </Menu>
+                              <Menu mnemonicParsing="false" text="Algorithms">
+                                <items>
+                                    <RadioMenuItem mnemonicParsing="false" selected="true" text="Fruchterman Reingold">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="algoToggle" />
+                                       </toggleGroup></RadioMenuItem>
+                                    <RadioMenuItem mnemonicParsing="false" text="ForceAtlas" toggleGroup="$algoToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="Davidson" toggleGroup="$algoToggle" />
+                                    <RadioMenuItem mnemonicParsing="false" text="Random" toggleGroup="$algoToggle" />
+                                </items>
+                              </Menu>
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <MenuItem mnemonicParsing="false" text="Settings..." />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Zoom">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="10%" />
+                              <MenuItem mnemonicParsing="false" text="30%" />
+                              <MenuItem mnemonicParsing="false" text="50%" />
+                              <MenuItem mnemonicParsing="false" text="80%" />
+                              <MenuItem mnemonicParsing="false" text="100%" />
+                              <MenuItem mnemonicParsing="false" text="120%" />
+                              <MenuItem mnemonicParsing="false" text="150%" />
+                          </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Run" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Export as..." />
+                     </items></Menu>
+                  <Menu mnemonicParsing="false" text="Data View">
+                     <items>
+                        <Menu mnemonicParsing="false" text="Species Table">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Add Row" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <Menu mnemonicParsing="false" text="Selection">
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Unselect" />
+                                    <MenuItem mnemonicParsing="false" text="Invert" />
+                                    <MenuItem mnemonicParsing="false" text="Remove Rows" />
+                                    <MenuItem mnemonicParsing="false" text="Select All" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Move Selected Row Up" />
+                                    <MenuItem mnemonicParsing="false" text="Move Selected Row Down" />
+                                </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text="Export to..." />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Reaction Table">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Add Row" />
+                              <SeparatorMenuItem mnemonicParsing="false" />
+                              <Menu mnemonicParsing="false" text="Selection">
+                                 <items>
+                                    <MenuItem mnemonicParsing="false" text="Unselect" />
+                                    <MenuItem mnemonicParsing="false" text="Invert" />
+                                    <MenuItem mnemonicParsing="false" text="Remove Rows" />
+                                    <MenuItem mnemonicParsing="false" text="Select All" />
+                                    <SeparatorMenuItem mnemonicParsing="false" />
+                                    <MenuItem mnemonicParsing="false" text="Move Selected Row Up" />
+                                    <MenuItem mnemonicParsing="false" text="Move Selected Row Down" />
+                                 </items>
+                              </Menu>
+                              <MenuItem mnemonicParsing="false" text="Export to..." />
+                           </items>
+                        </Menu>
+                     </items>
+                  </Menu>
+              <Menu mnemonicParsing="false" text="Help">
+                <items>
+                  <MenuItem mnemonicParsing="false" text="About Catbutler" />
+                </items>
+              </Menu>-->
+            </menus>
+        </MenuBar>
+        <HBox fx:id="bottomToolBar1" prefHeight="20.0" prefWidth="200.0">
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </HBox>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+            <children>
+                <TabPane fx:id="mainTabPane" prefHeight="854.0" prefWidth="1456.0" side="LEFT"
+                         tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                         AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <tabs>
+                        <Tab fx:id="wizardTab" closable="false" text="Format Wizard">
+                            <content>
+                                <AnchorPane>
+                                    <children>
+                                        <TabPane side="LEFT" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                 AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                            <tabs>
+                                                <Tab fx:id="schemeEditorTab" closable="false" text="Scheme Editor">
+                                                    <content>
+                                                        <AnchorPane>
+                                                            <children>
+                                                                <BorderPane prefHeight="1009.0" prefWidth="1456.0"
+                                                                            AnchorPane.bottomAnchor="0.0"
+                                                                            AnchorPane.leftAnchor="0.0"
+                                                                            AnchorPane.rightAnchor="0.0"
+                                                                            AnchorPane.topAnchor="0.0">
+                                                                    <center>
+                                                                        <SplitPane
+                                                                                dividerPositions="0.46176046176046176"
+                                                                                BorderPane.alignment="CENTER">
+                                                                            <items>
+                                                                                <AnchorPane fx:id="leftCodeAnchorPane">
+                                                                                    <children>
+                                                                                        <VirtualizedScrollPane
+                                                                                                fx:id="leftCodeAreaPane"
+                                                                                                hbarPolicy="ALWAYS"
+                                                                                                minHeight="0.0"
+                                                                                                minWidth="0.0"
+                                                                                                prefHeight="585.0"
+                                                                                                prefWidth="475.0"
+                                                                                                vbarPolicy="ALWAYS"
+                                                                                                AnchorPane.bottomAnchor="0.0"
+                                                                                                AnchorPane.leftAnchor="0.0"
+                                                                                                AnchorPane.rightAnchor="0.0"
+                                                                                                AnchorPane.topAnchor="0.0">
+                                                                                            <content>
+                                                                                                <CodeArea
+                                                                                                        fx:id="leftCodeArea"
+                                                                                                        wrapText="true"
+                                                                                                        AnchorPane.bottomAnchor="0.0"
+                                                                                                        AnchorPane.leftAnchor="0.0"
+                                                                                                        AnchorPane.rightAnchor="0.0"
+                                                                                                        AnchorPane.topAnchor="0.0">
+                                                                                                    <padding>
+                                                                                                        <Insets bottom="5.0"
+                                                                                                                left="5.0"
+                                                                                                                right="5.0"
+                                                                                                                top="5.0"/>
+                                                                                                    </padding>
+                                                                                                </CodeArea>
+                                                                                            </content>
+                                                                                            <padding>
+                                                                                                <Insets bottom="5.0"
+                                                                                                        left="5.0"
+                                                                                                        right="5.0"
+                                                                                                        top="5.0"/>
+                                                                                            </padding>
+                                                                                        </VirtualizedScrollPane>
+                                                                                    </children>
+                                                                                    <opaqueInsets>
+                                                                                        <Insets/>
+                                                                                    </opaqueInsets>
+                                                                                    <padding>
+                                                                                        <Insets bottom="5.0" left="5.0"
+                                                                                                right="5.0" top="5.0"/>
+                                                                                    </padding>
+                                                                                </AnchorPane>
+
+                                                                                <AnchorPane minHeight="0.0"
+                                                                                            minWidth="0.0"
+                                                                                            prefHeight="160.0"
+                                                                                            prefWidth="100.0">
+                                                                                    <children>
+                                                                                        <TabPane fx:id="formatTabPane"
+                                                                                                 layoutX="47.0"
+                                                                                                 layoutY="73.0"
+                                                                                                 prefHeight="765.0"
+                                                                                                 prefWidth="773.0"
+                                                                                                 tabClosingPolicy="UNAVAILABLE"
+                                                                                                 AnchorPane.bottomAnchor="0.0"
+                                                                                                 AnchorPane.leftAnchor="0.0"
+                                                                                                 AnchorPane.rightAnchor="0.0"
+                                                                                                 AnchorPane.topAnchor="0.0">
+                                                                                            <tabs>
+                                                                                                <Tab fx:id="treeViewTab"
+                                                                                                     text="Formatting">
+                                                                                                    <content>
+                                                                                                        <AnchorPane
+                                                                                                                minHeight="0.0"
+                                                                                                                minWidth="0.0"
+                                                                                                                prefHeight="180.0"
+                                                                                                                prefWidth="200.0">
+                                                                                                            <children>
+                                                                                                                <VBox fx:id="schemeViewVbox"
+                                                                                                                      prefHeight="726.0"
+                                                                                                                      prefWidth="773.0"
+                                                                                                                      AnchorPane.bottomAnchor="5.0"
+                                                                                                                      AnchorPane.leftAnchor="5.0"
+                                                                                                                      AnchorPane.rightAnchor="5.0"
+                                                                                                                      AnchorPane.topAnchor="5.0">
+                                                                                                                    <padding>
+                                                                                                                        <Insets bottom="5.0"
+                                                                                                                                left="5.0"
+                                                                                                                                right="5.0"
+                                                                                                                                top="5.0"/>
+                                                                                                                    </padding>
+                                                                                                                </VBox>
+                                                                                                            </children>
+                                                                                                            <padding>
+                                                                                                                <Insets bottom="5.0"
+                                                                                                                        left="5.0"
+                                                                                                                        right="5.0"
+                                                                                                                        top="5.0"/>
+                                                                                                            </padding>
+                                                                                                        </AnchorPane>
+                                                                                                    </content>
+                                                                                                </Tab>
+                                                                                                <Tab text="Format xml"
+                                                                                                     fx:id="xmlCodeTab">
+                                                                                                    <content>
+                                                                                                        <AnchorPane
+                                                                                                                fx:id="xmlCodeAreaAnchorPane">
+                                                                                                            <children>
+                                                                                                                <VirtualizedScrollPane
+                                                                                                                        fx:id="codeAreaPane"
+                                                                                                                        hbarPolicy="ALWAYS"
+                                                                                                                        minHeight="0.0"
+                                                                                                                        minWidth="0.0"
+                                                                                                                        prefHeight="556.0"
+                                                                                                                        prefWidth="715.0"
+                                                                                                                        vbarPolicy="ALWAYS"
+                                                                                                                        AnchorPane.bottomAnchor="0.0"
+                                                                                                                        AnchorPane.leftAnchor="0.0"
+                                                                                                                        AnchorPane.rightAnchor="0.0"
+                                                                                                                        AnchorPane.topAnchor="0.0">
+                                                                                                                    <content>
+                                                                                                                        <CodeArea
+                                                                                                                                wrapText="true"
+                                                                                                                                AnchorPane.bottomAnchor="0.0"
+                                                                                                                                AnchorPane.leftAnchor="0.0"
+                                                                                                                                AnchorPane.rightAnchor="0.0"
+                                                                                                                                AnchorPane.topAnchor="0.0"
+                                                                                                                                fx:id="xmlCodeArea">
+                                                                                                                            <padding>
+                                                                                                                                <Insets bottom="5.0"
+                                                                                                                                        left="5.0"
+                                                                                                                                        right="5.0"
+                                                                                                                                        top="5.0"/>
+                                                                                                                            </padding>
+                                                                                                                        </CodeArea>
+                                                                                                                    </content>
+                                                                                                                    <padding>
+                                                                                                                        <Insets bottom="5.0"
+                                                                                                                                left="5.0"
+                                                                                                                                right="5.0"
+                                                                                                                                top="5.0"/>
+                                                                                                                    </padding>
+                                                                                                                </VirtualizedScrollPane>
+                                                                                                            </children>
+                                                                                                            <padding>
+                                                                                                                <Insets bottom="5.0"
+                                                                                                                        left="5.0"
+                                                                                                                        right="5.0"
+                                                                                                                        top="5.0"/>
+                                                                                                            </padding>
+                                                                                                        </AnchorPane>
+                                                                                                    </content>
+                                                                                                </Tab>
+                                                                                            </tabs>
+                                                                                        </TabPane>
+                                                                                    </children>
+                                                                                </AnchorPane>
+                                                                            </items>
+                                                                        </SplitPane>
+                                                                    </center>
+                                                                    <right>
+                                                                        <VBox prefHeight="200.0" prefWidth="10.0"
+                                                                              BorderPane.alignment="CENTER"/>
+                                                                    </right>
+                                                                    <bottom>
+                                                                        <HBox prefHeight="23.0" prefWidth="1456.0"
+                                                                              spacing="5.0"
+                                                                              BorderPane.alignment="CENTER">
+                                                                            <children>
+                                                                                <Button fx:id="loadFileLeftButton"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="128.0"
+                                                                                        style="-fx-background-color: #dcdcdc; -fx-background-radius: 0;"
+                                                                                        text="Open Test File"/>
+                                                                                <Button fx:id="leftEditorValidationButton"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="233.0"
+                                                                                        style="-fx-background-color: #dcdcdc; -fx-background-radius: 0;"
+                                                                                        text="Validate File Against Custom Scheme"
+                                                                                        wrapText="true"/>
+                                                                                <Button fx:id="loadSchemeFileEditorButton"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="105.0"
+                                                                                        style="-fx-background-color: #dcdcdc; -fx-background-radius: 0;"
+                                                                                        text="Load Scheme"/>
+                                                                                <Button fx:id="saveSchemeFileEditorButton"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="100.0"
+                                                                                        style="-fx-background-radius: 0; -fx-background-color: #dcdcdc;"
+                                                                                        text="Save Scheme"/>
+                                                                                <!--<Button mnemonicParsing="false" prefHeight="25.0" prefWidth="171.0" style="-fx-background-color: #dcdcdc; -fx-background-radius: 0;" text="Validate Custom Scheme" />-->
+                                                                                <Label fx:id="editorValidLabel"
+                                                                                       text="File not validated yet."/>
+                                                                            </children>
+                                                                            <padding>
+                                                                                <Insets left="5.0" right="5.0"/>
+                                                                            </padding>
+                                                                        </HBox>
+                                                                    </bottom>
+                                                                </BorderPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                                <Tab fx:id="converterTab" closable="false" text="Converter">
+                                                    <content>
+                                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                                    prefWidth="200.0">
+                                                            <children>
+                                                                <BorderPane layoutX="135.0" layoutY="114.0"
+                                                                            prefHeight="794.0" prefWidth="1456.0"
+                                                                            AnchorPane.bottomAnchor="0.0"
+                                                                            AnchorPane.leftAnchor="0.0"
+                                                                            AnchorPane.rightAnchor="0.0"
+                                                                            AnchorPane.topAnchor="0.0">
+                                                                    <center>
+                                                                        <SplitPane dividerPositions="0.5"
+                                                                                   BorderPane.alignment="CENTER">
+                                                                            <items>
+                                                                                <AnchorPane prefHeight="200.0"
+                                                                                            prefWidth="200.0">
+                                                                                    <children>
+                                                                                        <VirtualizedScrollPane
+                                                                                                hbarPolicy="ALWAYS"
+                                                                                                prefHeight="505.0"
+                                                                                                prefWidth="665.0"
+                                                                                                vbarPolicy="ALWAYS"
+                                                                                                AnchorPane.bottomAnchor="0.0"
+                                                                                                AnchorPane.leftAnchor="0.0"
+                                                                                                AnchorPane.rightAnchor="0.0"
+                                                                                                AnchorPane.topAnchor="0.0">
+                                                                                            <content>
+                                                                                                <CodeArea
+                                                                                                        fx:id="leftConvertArea"
+                                                                                                        wrapText="true"
+                                                                                                        AnchorPane.bottomAnchor="0.0"
+                                                                                                        AnchorPane.leftAnchor="0.0"
+                                                                                                        AnchorPane.rightAnchor="0.0"
+                                                                                                        AnchorPane.topAnchor="0.0">
+                                                                                                    <padding>
+                                                                                                        <Insets bottom="5.0"
+                                                                                                                left="5.0"
+                                                                                                                right="5.0"
+                                                                                                                top="5.0"/>
+                                                                                                    </padding>
+                                                                                                </CodeArea>
+                                                                                            </content>
+                                                                                            <padding>
+                                                                                                <Insets bottom="5.0"
+                                                                                                        left="5.0"
+                                                                                                        right="5.0"
+                                                                                                        top="5.0"/>
+                                                                                            </padding>
+                                                                                        </VirtualizedScrollPane>
+                                                                                    </children>
+                                                                                </AnchorPane>
+                                                                                <AnchorPane prefHeight="200.0"
+                                                                                            prefWidth="200.0">
+                                                                                    <children>
+                                                                                        <VirtualizedScrollPane
+                                                                                                hbarPolicy="ALWAYS"
+                                                                                                minHeight="0.0"
+                                                                                                minWidth="0.0"
+                                                                                                prefHeight="505.0"
+                                                                                                prefWidth="665.0"
+                                                                                                vbarPolicy="ALWAYS"
+                                                                                                AnchorPane.bottomAnchor="0.0"
+                                                                                                AnchorPane.leftAnchor="0.0"
+                                                                                                AnchorPane.rightAnchor="0.0"
+                                                                                                AnchorPane.topAnchor="0.0">
+                                                                                            <content>
+                                                                                                <CodeArea
+                                                                                                        fx:id="rightConvertArea"
+                                                                                                        wrapText="true"
+                                                                                                        AnchorPane.bottomAnchor="0.0"
+                                                                                                        AnchorPane.leftAnchor="0.0"
+                                                                                                        AnchorPane.rightAnchor="0.0"
+                                                                                                        AnchorPane.topAnchor="0.0">
+                                                                                                    <padding>
+                                                                                                        <Insets bottom="5.0"
+                                                                                                                left="5.0"
+                                                                                                                right="5.0"
+                                                                                                                top="5.0"/>
+                                                                                                    </padding>
+                                                                                                </CodeArea>
+                                                                                            </content>
+                                                                                            <padding>
+                                                                                                <Insets bottom="5.0"
+                                                                                                        left="5.0"
+                                                                                                        right="5.0"
+                                                                                                        top="5.0"/>
+                                                                                            </padding>
+                                                                                        </VirtualizedScrollPane>
+                                                                                    </children>
+                                                                                </AnchorPane>
+                                                                            </items>
+                                                                        </SplitPane>
+                                                                    </center>
+                                                                    <right>
+                                                                        <VBox prefHeight="512.0" prefWidth="50.0"
+                                                                              BorderPane.alignment="CENTER"/>
+                                                                    </right>
+                                                                    <bottom>
+                                                                        <GridPane hgap="5.0" vgap="2.0"
+                                                                                  BorderPane.alignment="CENTER">
+                                                                            <columnConstraints>
+                                                                                <ColumnConstraints hgrow="NEVER"
+                                                                                                   maxWidth="261.0"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="233.0"/>
+                                                                                <ColumnConstraints hgrow="NEVER"
+                                                                                                   maxWidth="316.0"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="139.0"/>
+                                                                                <ColumnConstraints hgrow="NEVER"
+                                                                                                   maxWidth="316.0"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="254.0"/>
+                                                                                <ColumnConstraints hgrow="NEVER"
+                                                                                                   maxWidth="434.0"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="98.0"/>
+                                                                                <ColumnConstraints hgrow="NEVER"
+                                                                                                   maxWidth="598.0"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="168.0"/>
+                                                                                <ColumnConstraints hgrow="SOMETIMES"
+                                                                                                   maxWidth="573.0"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="359.0"/>
+                                                                                <ColumnConstraints hgrow="SOMETIMES"
+                                                                                                   minWidth="10.0"
+                                                                                                   prefWidth="100.0"/>
+                                                                            </columnConstraints>
+                                                                            <rowConstraints>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints/>
+                                                                                <RowConstraints minHeight="10.0"
+                                                                                                prefHeight="30.0"
+                                                                                                vgrow="SOMETIMES"/>
+                                                                                <RowConstraints minHeight="10.0"
+                                                                                                prefHeight="30.0"
+                                                                                                vgrow="SOMETIMES"/>
+                                                                                <RowConstraints minHeight="10.0"
+                                                                                                prefHeight="30.0"
+                                                                                                vgrow="SOMETIMES"/>
+                                                                            </rowConstraints>
+                                                                            <children>
+                                                                                <HBox alignment="CENTER_LEFT"
+                                                                                      prefHeight="30.0"
+                                                                                      prefWidth="244.0" spacing="10.0"
+                                                                                      GridPane.columnIndex="2"
+                                                                                      GridPane.halignment="CENTER"
+                                                                                      GridPane.rowIndex="7">
+                                                                                    <children>
+                                                                                        <Button fx:id="converterLeftValidationButton"
+                                                                                                mnemonicParsing="false"
+                                                                                                prefHeight="25.0"
+                                                                                                prefWidth="119.0"
+                                                                                                text="Validate Input File"/>
+                                                                                        <Label fx:id="converterValidLabel"
+                                                                                               alignment="CENTER"
+                                                                                               nodeOrientation="LEFT_TO_RIGHT"
+                                                                                               text="File unvalidated."
+                                                                                               textFill="#7c7979"
+                                                                                               HBox.hgrow="NEVER">
+                                                                                            <HBox.margin>
+                                                                                                <Insets/>
+                                                                                            </HBox.margin>
+                                                                                            <font>
+                                                                                                <Font name="System Italic"
+                                                                                                      size="12.0"/>
+                                                                                            </font>
+                                                                                        </Label>
+                                                                                    </children>
+                                                                                    <padding>
+                                                                                        <Insets left="10.0"/>
+                                                                                    </padding>
+                                                                                </HBox>
+                                                                                <Button fx:id="loadLeftConvertFile"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="156.0"
+                                                                                        text="Load Input"
+                                                                                        GridPane.columnIndex="1"
+                                                                                        GridPane.rowIndex="1"/>
+                                                                                <Button fx:id="saveOutputFileButton"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="145.0"
+                                                                                        text="Save Output"
+                                                                                        GridPane.columnIndex="5"
+                                                                                        GridPane.halignment="RIGHT"
+                                                                                        GridPane.rowIndex="1"/>
+                                                                                <ChoiceBox fx:id="leftDocTypeCBox"
+                                                                                           prefHeight="25.0"
+                                                                                           prefWidth="95.0"
+                                                                                           GridPane.columnIndex="2"
+                                                                                           GridPane.halignment="CENTER"
+                                                                                           GridPane.rowIndex="8"/>
+                                                                                <CheckBox fx:id="correctIdsCheckBox"
+                                                                                          text="Correct invalid Strings/IDs"
+                                                                                          GridPane.columnIndex="2"
+                                                                                          GridPane.halignment="CENTER"
+                                                                                          GridPane.rowIndex="1"
+                                                                                          GridPane.valignment="CENTER">
+                                                                                    <GridPane.margin>
+                                                                                        <Insets right="5.0"/>
+                                                                                    </GridPane.margin>
+                                                                                    <font>
+                                                                                        <Font name="System Italic"
+                                                                                              size="12.0"/>
+                                                                                    </font>
+                                                                                </CheckBox>
+                                                                                <TextField fx:id="leftSchemePath"
+                                                                                           editable="false"
+                                                                                           prefHeight="25.0"
+                                                                                           prefWidth="175.0"
+                                                                                           promptText="scheme file"
+                                                                                           GridPane.rowIndex="8"/>
+                                                                                <Button fx:id="loadLeftSchemeButton"
+                                                                                        mnemonicParsing="false"
+                                                                                        prefHeight="25.0"
+                                                                                        prefWidth="168.0"
+                                                                                        text="Load Scheme"
+                                                                                        GridPane.columnIndex="1"
+                                                                                        GridPane.rowIndex="8"/>
+                                                                                <ChoiceBox fx:id="rightDocTypeCBox"
+                                                                                           prefHeight="25.0"
+                                                                                           prefWidth="95.0"
+                                                                                           GridPane.columnIndex="4"
+                                                                                           GridPane.halignment="CENTER"
+                                                                                           GridPane.rowIndex="8"/>
+                                                                                <TextField fx:id="leftInputPath"
+                                                                                           editable="false"
+                                                                                           prefWidth="287.0"
+                                                                                           promptText="scheme file"
+                                                                                           GridPane.rowIndex="1"/>
+                                                                                <Button fx:id="convertButton"
+                                                                                        disable="true"
+                                                                                        mnemonicParsing="false"
+                                                                                        text="Convert"
+                                                                                        GridPane.columnIndex="3"
+                                                                                        GridPane.rowIndex="1"/>
+                                                                                <Separator prefWidth="200.0"
+                                                                                           GridPane.columnSpan="2"
+                                                                                           GridPane.rowIndex="6"/>
+                                                                                <Label text="Parsing for Custom Formats:"
+                                                                                       GridPane.rowIndex="7"
+                                                                                       GridPane.valignment="BOTTOM"/>
+                                                                                <Separator orientation="VERTICAL"
+                                                                                           prefHeight="200.0"
+                                                                                           GridPane.columnIndex="2"
+                                                                                           GridPane.rowIndex="7"
+                                                                                           GridPane.rowSpan="3"/>
+                                                                                <Separator layoutX="10.0" layoutY="47.0"
+                                                                                           prefWidth="200.0"/>
+                                                                            </children>
+                                                                            <BorderPane.margin>
+                                                                                <Insets bottom="5.0" left="5.0"
+                                                                                        right="5.0" top="5.0"/>
+                                                                            </BorderPane.margin>
+                                                                            <padding>
+                                                                                <Insets bottom="3.0" left="3.0"
+                                                                                        right="3.0" top="3.0"/>
+                                                                            </padding>
+                                                                        </GridPane>
+                                                                    </bottom>
+                                                                </BorderPane>
+                                                            </children>
+                                                        </AnchorPane>
+                                                    </content>
+                                                </Tab>
+                                            </tabs>
+                                        </TabPane>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="documentTab" closable="false" text="Document">
+                            <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                    <children>
+                                        <VBox prefHeight="622.0" prefWidth="1417.0" AnchorPane.bottomAnchor="0.0"
+                                              AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                                              AnchorPane.topAnchor="0.0">
+                                            <children>
+                                                <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                                                            AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                    <content>
+                                                        <TextArea fx:id="createDocCodeArea" prefHeight="606.0"
+                                                                  prefWidth="1401.0"/>
+                                                    </content>
+                                                </ScrollPane>
+                                            </children>
+                                            <padding>
+                                                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </AnchorPane>
+                            </content>
+                        </Tab>
+                        <Tab fx:id="visualizationTab" closable="false" text="Visualization"/>
+                    </tabs>
+                </TabPane>
+            </children>
+        </AnchorPane>
+
+        <VBox fx:id="dataViewBox" alignment="BOTTOM_CENTER" disable="false" prefHeight="380.0" prefWidth="1456.0"
+              VBox.vgrow="ALWAYS">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0">
+                    <children>
+                        <VBox alignment="CENTER" style="-fx-background-color: lightblue;" HBox.hgrow="NEVER">
+                            <children>
+                                <ImageView fx:id="moveRowUp" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true" rotate="180.0">
+                                    <image>
+                                        <Image url="@../images/0900-minimize2.png"/>
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </ImageView>
+                                <Pane prefHeight="19.0" prefWidth="20.0"/>
+                                <ImageView fx:id="moveRowDown" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/0900-minimize2.png"/>
+                                    </image>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND"/>
+                                    </cursor>
+                                </ImageView>
+                            </children>
+                        </VBox>
+                        <StackPane fx:id="dataViewStackPane" minHeight="251.0" prefHeight="251.0" prefWidth="1427.0">
+                            <children>
+                                <TabPane fx:id="dataViewTabPane" prefHeight="251.0" prefWidth="1427.0"
+                                         tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+                                    <tabs>
+                                        <Tab closable="false" text="Document">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <ScrollPane fx:id="documentTableScrollPane" prefHeight="222.0"
+                                                                    prefWidth="1436.0" AnchorPane.bottomAnchor="0.0"
+                                                                    AnchorPane.leftAnchor="0.0"
+                                                                    AnchorPane.rightAnchor="0.0"
+                                                                    AnchorPane.topAnchor="0.0"/>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                        <Tab closable="false" text="Species">
+                                            <content>
+                                                <VBox fillWidth="true" minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                      prefWidth="200.0">
+                                                    <children>
+                                                        <ScrollPane fx:id="speciesTableScrollPane" fitToHeight="true"
+                                                                    fitToWidth="true" prefHeight="180.0"
+                                                                    prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+                                                                    AnchorPane.leftAnchor="0.0"
+                                                                    AnchorPane.rightAnchor="0.0"
+                                                                    AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                                                            <padding>
+                                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                                            </padding>
+                                                        </ScrollPane>
+                                                    </children>
+                                                </VBox>
+                                            </content>
+                                        </Tab>
+                                        <Tab closable="false" text="Reactions">
+                                            <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0"
+                                                            prefWidth="200.0">
+                                                    <children>
+                                                        <ScrollPane fx:id="reactionTableScrollPane" fitToHeight="true"
+                                                                    fitToWidth="true" prefHeight="180.0"
+                                                                    prefWidth="600.0" AnchorPane.bottomAnchor="0.0"
+                                                                    AnchorPane.leftAnchor="0.0"
+                                                                    AnchorPane.rightAnchor="0.0"
+                                                                    AnchorPane.topAnchor="0.0" VBox.vgrow="ALWAYS">
+                                                            <padding>
+                                                                <Insets bottom="3.0" left="3.0" right="3.0" top="3.0"/>
+                                                            </padding>
+                                                        </ScrollPane>
+                                                    </children>
+                                                </AnchorPane>
+                                            </content>
+                                        </Tab>
+                                    </tabs>
+                                </TabPane>
+                                <VBox alignment="TOP_RIGHT" maxHeight="25.0" maxWidth="1106.0" minHeight="25.0"
+                                      prefHeight="25.0" prefWidth="1106.0" StackPane.alignment="TOP_RIGHT">
+                                    <children>
+                                        <HBox alignment="CENTER" spacing="10.0">
+                                            <children>
+                                                <Label text="Filter Table:"/>
+                                                <TextField fx:id="queryTextField" prefHeight="25.0" prefWidth="483.0"
+                                                           promptText="QUERY"/>
+                                                <Button fx:id="runQueryButton" mnemonicParsing="false" text="Run"/>
+                                                <Label fx:id="selectedCount" text="0 rows selected."/>
+
+                                                <!--<ImageView fx:id="selectAllEntriesIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                            <Image url="@../images/buttonIcons/758675-interface/758675-interface/png/011-tick.png" />
+                                                        </image>
+                                                </ImageView>
+                                                <ImageView fx:id="inverseSelectionIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/buttonIcons/758675-interface/758675-interface/png/200-invert1.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fx:id="addIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/buttonIcons/758675-interface/758675-interface/png/132-add.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fx:id="deleteIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/buttonIcons/758675-interface/758675-interface/png/097-delete-2.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fx:id="copySelectionIcon" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/buttonIcons/758675-interface/758675-interface/png/050-clipboard.png" />
+                                                    </image>
+                                                </ImageView>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../images/buttonIcons/758675-interface/758675-interface/png/000-duplicate1.png" />
+                                                    </image>
+                                                </ImageView>-->
+                                            </children>
+                                            <padding>
+                                                <Insets left="5.0" right="15.0"/>
+                                            </padding>
+                                            <VBox.margin>
+                                                <Insets top="2.0"/>
+                                            </VBox.margin>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </StackPane>
+                    </children>
+                </HBox>
+            </children>
+            <VBox.margin>
+                <Insets left="5.0" right="5.0"/>
+            </VBox.margin>
+        </VBox>
+        <HBox fx:id="bottomToolBar" prefHeight="20.0" prefWidth="200.0">
+            <children>
+                <Button fx:id="maximizeDataViewButton" contentDisplay="CENTER" focusTraversable="true"
+                        style="-fx-background-color: #696969; -fx-background-radius: 0" text="Data View" visible="true"
+                        HBox.hgrow="NEVER"/>
+            </children>
+            <VBox.margin>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </VBox.margin>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="5.0" left="5.0" right="5.0"/>
+    </padding>
+</VBox>

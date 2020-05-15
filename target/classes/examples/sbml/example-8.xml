@@ -1,0 +1,781 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<sbml xmlns="http://www.sbml.org/sbml/level3/version2/core" level="3" version="2">
+  <model metaid="_5bc03ce7-ab7c-4bfc-9583-4b3f1a227a93">
+    <annotation>
+	<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:vCard="http://www.w3.org/2001/vcard-rdf/3.0#">
+	<rdf:Description rdf:about="#_5bc03ce7-ab7c-4bfc-9583-4b3f1a227a93">
+	<dc:creator>
+	<rdf:Bag>
+	<rdf:li rdf:parseType="Resource">
+	<vCard:N rdf:parseType="Resource">
+	<vCard:Family>Default Family Name</vCard:Family>
+	<vCard:Given>Default Given Name</vCard:Given>
+	</vCard:N>
+	<vCard:EMAIL>Default@EMail.com</vCard:EMAIL>
+	<vCard:ORG rdf:parseType="Resource">
+	<vCard:Orgname>Default Organisation</vCard:Orgname>
+	</vCard:ORG>
+	</rdf:li>
+	</rdf:Bag>
+	</dc:creator>
+	</rdf:Description>
+	</rdf:RDF>
+	</annotation>
+      <listOfCompartments>
+      <compartment constant="false" id="default"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="a" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="aa" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="aaaabaa" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="aaba" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="aabaa" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="aabaab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="aabaabbb" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="ab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="abab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="abb" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="b" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="ba" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="baa" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="baaa" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="baab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="baabab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="baabb" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="baabbbab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="bab" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="babb" initialConcentration="0" sboTerm="SBO:0000285"/>
+      <species boundaryCondition="false" compartment="default" constant="false" hasOnlySubstanceUnits="false" id="bb" initialConcentration="0" sboTerm="SBO:0000285"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction compartment="default" id="r01" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: a+baa[aa_aabaabbb]&lt;->baaa</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="a_reactantOf_r01" sboTerm="SBO:0000010" species="a" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="baa_reactantOf_r01" sboTerm="SBO:0000010" species="baa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="baaa_productOf_r01" sboTerm="SBO:0000011" species="baaa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="aa_catalystOf_r01" sboTerm="SBO:0000013" species="aa">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+          <modifierSpeciesReference id="aabaabbb_catalystOf_r01" sboTerm="SBO:0000013" species="aabaabbb">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r02" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: aaba+ab[baaa]&lt;->aabaab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="aaba_reactantOf_r02" sboTerm="SBO:0000010" species="aaba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="ab_reactantOf_r02" sboTerm="SBO:0000010" species="ab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="aabaab_productOf_r02" sboTerm="SBO:0000011" species="aabaab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="baaa_catalystOf_r02" sboTerm="SBO:0000013" species="baaa">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r03" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: aa+ba[a]&lt;->aaba</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="aa_reactantOf_r03" sboTerm="SBO:0000010" species="aa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="ba_reactantOf_r03" sboTerm="SBO:0000010" species="ba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="aaba_productOf_r03" sboTerm="SBO:0000011" species="aaba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="a_catalystOf_r03" sboTerm="SBO:0000013" species="a">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r04" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: aa+aabaa[aaba]&lt;->aaaabaa</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="aa_reactantOf_r04" sboTerm="SBO:0000010" species="aa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="aabaa_reactantOf_r04" sboTerm="SBO:0000010" species="aabaa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="aaaabaa_productOf_r04" sboTerm="SBO:0000011" species="aaaabaa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="aaba_catalystOf_r04" sboTerm="SBO:0000013" species="aaba">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r05" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: a+aaba[baa]&lt;->aabaa</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="a_reactantOf_r05" sboTerm="SBO:0000010" species="a" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="aaba_reactantOf_r05" sboTerm="SBO:0000010" species="aaba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="aabaa_productOf_r05" sboTerm="SBO:0000011" species="aabaa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="baa_catalystOf_r05" sboTerm="SBO:0000013" species="baa">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r06" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: baa+bab[aabaa_ba]&lt;->baabab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="baa_reactantOf_r06" sboTerm="SBO:0000010" species="baa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="bab_reactantOf_r06" sboTerm="SBO:0000010" species="bab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="baabab_productOf_r06" sboTerm="SBO:0000011" species="baabab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="aabaa_catalystOf_r06" sboTerm="SBO:0000013" species="aabaa">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+          <modifierSpeciesReference id="ba_catalystOf_r06" sboTerm="SBO:0000013" species="ba">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r07" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: a+ba[baab]&lt;->baa</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="a_reactantOf_r07" sboTerm="SBO:0000010" species="a" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="ba_reactantOf_r07" sboTerm="SBO:0000010" species="ba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="baa_productOf_r07" sboTerm="SBO:0000011" species="baa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="baab_catalystOf_r07" sboTerm="SBO:0000013" species="baab">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r08" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: baa+bb[b]&lt;->baabb</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="baa_reactantOf_r08" sboTerm="SBO:0000010" species="baa" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="bb_reactantOf_r08" sboTerm="SBO:0000010" species="bb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="baabb_productOf_r08" sboTerm="SBO:0000011" species="baabb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="b_catalystOf_r08" sboTerm="SBO:0000013" species="b">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r09" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: baabb+bab[abb]&lt;->baabbbab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="baabb_reactantOf_r09" sboTerm="SBO:0000010" species="baabb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="bab_reactantOf_r09" sboTerm="SBO:0000010" species="bab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="baabbbab_productOf_r09" sboTerm="SBO:0000011" species="baabbbab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="abb_catalystOf_r09" sboTerm="SBO:0000013" species="abb">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r10" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: b+bab[baabbbab]&lt;->babb</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="b_reactantOf_r10" sboTerm="SBO:0000010" species="b" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="bab_reactantOf_r10" sboTerm="SBO:0000010" species="bab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="babb_productOf_r10" sboTerm="SBO:0000011" species="babb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="baabbbab_catalystOf_r10" sboTerm="SBO:0000013" species="baabbbab">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r11" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: b+ba[bb]&lt;->bab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="b_reactantOf_r11" sboTerm="SBO:0000010" species="b" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="ba_reactantOf_r11" sboTerm="SBO:0000010" species="ba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="bab_productOf_r11" sboTerm="SBO:0000011" species="bab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="bb_catalystOf_r11" sboTerm="SBO:0000013" species="bb">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r12" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: a+b[ab]&lt;->ba</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="a_reactantOf_r12" sboTerm="SBO:0000010" species="a" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="b_reactantOf_r12" sboTerm="SBO:0000010" species="b" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="ba_productOf_r12" sboTerm="SBO:0000011" species="ba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="ab_catalystOf_r12" sboTerm="SBO:0000013" species="ab">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r13" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: a+b[a]&lt;->ab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="a_reactantOf_r13" sboTerm="SBO:0000010" species="a" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="b_reactantOf_r13" sboTerm="SBO:0000010" species="b" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="ab_productOf_r13" sboTerm="SBO:0000011" species="ab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="a_catalystOf_r13" sboTerm="SBO:0000013" species="a">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r14" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: a+bb[ab_b]&lt;->abb</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="a_reactantOf_r14" sboTerm="SBO:0000010" species="a" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="bb_reactantOf_r14" sboTerm="SBO:0000010" species="bb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="abb_productOf_r14" sboTerm="SBO:0000011" species="abb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="ab_catalystOf_r14" sboTerm="SBO:0000013" species="ab">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+          <modifierSpeciesReference id="b_catalystOf_r14" sboTerm="SBO:0000013" species="b">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r15" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: ab+ba[abb]&lt;->baab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="ab_reactantOf_r15" sboTerm="SBO:0000010" species="ab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="ba_reactantOf_r15" sboTerm="SBO:0000010" species="ba" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="baab_productOf_r15" sboTerm="SBO:0000011" species="baab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="abb_catalystOf_r15" sboTerm="SBO:0000013" species="abb">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r16" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: ab[aabaabbb]&lt;->abab</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="ab_reactantOf_r16" sboTerm="SBO:0000010" species="ab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="abab_productOf_r16" sboTerm="SBO:0000011" species="abab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="aabaabbb_catalystOf_r16" sboTerm="SBO:0000013" species="aabaabbb">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+      <reaction compartment="default" id="r17" reversible="true" sboTerm="SBO:0000231">
+        <notes>
+          <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>FORMULA: aabaab+bb[baab]&lt;->aabaabbb</p>
+    <p>FORMULA MIGHT CONTAIN REPAIRED IDs - DUPLICATES POSSIBLE - SEE LOG.</p>
+  </body>
+        </notes>
+        <listOfReactants>
+          <speciesReference constant="false" id="aabaab_reactantOf_r17" sboTerm="SBO:0000010" species="aabaab" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+          <speciesReference constant="false" id="bb_reactantOf_r17" sboTerm="SBO:0000010" species="bb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>REACTANT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference constant="false" id="aabaabbb_productOf_r17" sboTerm="SBO:0000011" species="aabaabbb" stoichiometry="1">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>PRODUCT_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </speciesReference>
+        </listOfProducts>
+        <listOfModifiers>
+          <modifierSpeciesReference id="baab_catalystOf_r17" sboTerm="SBO:0000013" species="baab">
+            <notes>
+              <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>CATALYST/MODIFIER_STOICHIOMETRY: 1.0</p>
+  </body>
+            </notes>
+          </modifierSpeciesReference>
+        </listOfModifiers>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
